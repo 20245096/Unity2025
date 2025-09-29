@@ -18,7 +18,7 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             //this.speed = 0.2f;
             this.startPos = Input.mousePosition;
@@ -27,12 +27,12 @@ public class CarController : MonoBehaviour
         {
             Vector2 endPos = Input.mousePosition;
             float swipeLength = endPos.x - startPos.x;
-
             this.speed = swipeLength / speedRatio;
+            GetComponent<AudioSource>().Play();
         }
 
         transform.Translate(this.speed, 0, 0);
         this.speed *= decreaseRatio;
-
+        if (this.speed < 0.01f) this.speed = 0f;
     }
 }

@@ -10,10 +10,10 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-/[Aa]ssets/9.Downloads/
 /[Ee]xe/
-/Assets/TextMesh Pro/
 *.log
+/[Aa]ssets/9.Downloads/
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
