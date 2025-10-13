@@ -5,8 +5,15 @@ using UnityEngine;
 public class ArrowController : MonoBehaviour
 {
     public float dropSpeed = 0.1f;
-    // Start is called before the first frame update
-   
+    public float arrowRadius = 0.3f;
+    public float playerRadius = 0.7f;
+
+    Transform playerTransform;
+
+    private void Start()
+    {
+        playerTransform = GameObject.Find("player").GetComponent<Transform>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,6 +23,20 @@ public class ArrowController : MonoBehaviour
         if (transform.position.y < -7f)
         {
             Destroy(gameObject);
+        }
+
+        CheckCollision();
+    }
+
+    void CheckCollision()
+    {
+        Vector2 arrowPosition = transform.position;
+        Vector2 playerPosition = playerTransform.position;
+        float distance = (arrowPosition - playerPosition).magnitude;
+
+        if(distance < arrowRadius + playerRadius)
+        {
+            Destroy (gameObject);
         }
     }
 }
