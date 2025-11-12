@@ -308,6 +308,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1574227615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &200199244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2340667955650204739, guid: c6f4dbb2810025f49958dc8a6016f858, type: 3}
+  m_PrefabInstance: {fileID: 8145219939871906535}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &699506319
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +611,8 @@ GameObject:
   - component: {fileID: 1574227613}
   - component: {fileID: 1574227612}
   - component: {fileID: 1574227616}
+  - component: {fileID: 1574227617}
+  - component: {fileID: 1574227618}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -714,7 +721,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712138b9ad25324468c5272b0b39c4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bamsongiPrefab: {fileID: 2340667955650204739, guid: c6f4dbb2810025f49958dc8a6016f858, type: 3}
+  bamsongiPrefab: {fileID: 200199244}
+  throwForce: 5
+--- !u!114 &1574227617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574227611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1e3ce772d7a1d45854e8c816ac6658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rotateSpeed: 50
+--- !u!54 &1574227618
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574227611}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1001 &8145219939871906535
 PrefabInstance:
   m_ObjectHideFlags: 0
