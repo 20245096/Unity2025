@@ -13,7 +13,7 @@
 /[Ee]xe/
 *.log
 /[Aa]ssets/9.Downloads/
-
+/[Aa]ssets/TextMeshPro
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

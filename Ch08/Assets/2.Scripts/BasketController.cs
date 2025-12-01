@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class BasketController : MonoBehaviour
 {
+    public AudioClip appleSE;
+    public AudioClip bombSE;
+    GameDirector gameDirector;
+
+    AudioSource aud;
+
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 60;
+        aud = GetComponent<AudioSource>();
+        gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
     }
 
     // Update is called once per frame
@@ -19,8 +27,27 @@ public class BasketController : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-
+                float x = Mathf.RoundToInt(hit.point.x);
+                float z = Mathf.RoundToInt(hit.point.z);
+                transform.position = new Vector3(x, 0, z);
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Àâ¾Ò´Ù!");
+        if (other.gameObject.tag == "apple")
+        {
+            Debug.Log("»ç°ú");
+            aud.PlayOneShot(appleSE);
+        }
+        else if (other.gameObject.tag == "bomb")
+        {
+            Debug.Log("ÆøÅº");
+            aud.PlayOneShot(bombSE);
+        }
+        
+        Destroy(other.gameObject);
     }
 }
